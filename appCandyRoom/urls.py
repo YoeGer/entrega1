@@ -2,7 +2,7 @@ from django.urls import path
 from appCandyRoom.views import * 
 
 urlpatterns = [
-    path('', inicio),
+    path('', inicio, name='inicio'),
     path('stock/', stock, name='stock'), 
     path('proveedores/', proveedores, name='proveedores'), 
     path('ventas/', ventas, name='ventas'), 
