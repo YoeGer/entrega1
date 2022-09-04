@@ -5,7 +5,7 @@
 <header class="masthead text-center text-white">
     <div class="masthead-content">
         <div class="container px-5">
-            <h1 class="masthead-heading mb-0">BUSQUEDA DE PRODUCTO</h1>
+            <h1 class="masthead-heading mb-0">RESULTADO DE LA BUSQUEDA</h1>
             <div class="container">
                 <a class="btn btn-primary" href="{% url 'inicio' %}">Volver Inicio</a>
             </div>
@@ -22,11 +22,18 @@
 {% block contenido_que_cambia %}
 
 <div>
-    <form action = "{% url 'buscarProd' %}" method="GET">
-
-        <input type="text" name="producto" id="producto">
-        <input type="submit" value="Buscar">
-    </form>
+    <h1>BUSQUEDA DE PROVEEDORES</h1>
+    {% if proveedor %}
+    <ul>
+        {% for prov in proveedor %} 
+        <li>{{ prov.nombre }}</li>
+        <li>{{ prov.apellido }}</li>
+        <li>{{ prov.email }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No se encontraron proveedores que se correspondan con ese nombre</p>
+    {% endif %}
 </div>
-{{ mensaje }}
+
 {% endblock %}

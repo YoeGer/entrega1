@@ -5,7 +5,7 @@
 <header class="masthead text-center text-white">
     <div class="masthead-content">
         <div class="container px-5">
-            <h1 class="masthead-heading mb-0">BUSQUEDA DE PRODUCTO</h1>
+            <h1 class="masthead-heading mb-0">BUSQUEDA DE PROVEEDOR</h1>
             <div class="container">
                 <a class="btn btn-primary" href="{% url 'inicio' %}">Volver Inicio</a>
             </div>
@@ -22,9 +22,9 @@
 {% block contenido_que_cambia %}
 
 <div>
-    <form action = "{% url 'buscarProd' %}" method="GET">
+    <form action = "{% url 'buscarProv' %}" method="GET">
 
-        <input type="text" name="producto" id="producto">
+        <input type="text" name="nombre" id="nombre">
         <input type="submit" value="Buscar">
     </form>
 </div>

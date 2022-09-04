@@ -8,6 +8,8 @@ urlpatterns = [
     path('ventas/', ventas, name='ventas'), 
     path('gastos/', gastos_generales, name='gastos'),
     path('busquedaProducto/', busquedaProducto, name="busquedaProducto"), 
-    path('buscar/', buscar, name="buscar"), 
+    path('buscarProd/', buscarProd, name="buscarProd"), 
+    path('busquedaProveedor/', busquedaProveedor, name="busquedaProveedor"), 
+    path('buscarProv/', buscarProv, name="buscarProv"), 
 ]
 

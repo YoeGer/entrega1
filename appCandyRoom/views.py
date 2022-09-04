@@ -68,12 +68,21 @@ def gastos_generales (request):
 def busquedaProducto(request): 
     return render (request, "appCandyRoom/busquedaProducto.html")
 
-def buscar(request): 
+def buscarProd(request): 
     if request.GET["producto"]: 
         producto = request.GET["producto"]
         producto = Stock.objects.filter(producto = producto)
-        return render (request, "appCandyRoom/resultadosBusqueda.html", {"producto": producto})
+        return render (request, "appCandyRoom/resultadosBusquedaProd.html", {"producto": producto})
     else: 
         return render (request, "appCandyRoom/busquedaProducto.html", {'mensaje': "Ingrese un producto"})
 
-    
+def busquedaProveedor(request): 
+    return render (request, "appCandyRoom/busquedaProveedor.html")
+
+def buscarProv(request): 
+    if request.GET["nombre"]: 
+        nombre = request.GET["nombre"]
+        proveedor = Proveedores.objects.filter(nombre = nombre)
+        return render (request, "appCandyRoom/resultadosBusquedaProv.html", {"nombre": nombre})
+    else: 
+        return render (request, "appCandyRoom/busquedaProveedor.html", {'mensaje': "Ingrese el nombre de un proveedor"})   
