@@ -45,8 +45,9 @@
         </header>
         {% endblock %}
         <!-- Content section 1-->
-       {% block contenido_que_cambia %}
+       
         <section id="scroll">
+            {% block contenido_que_cambia %}
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6 order-lg-2">
@@ -60,7 +61,8 @@
                     </div>
                 </div>
             </div>
+            {% endblock %}
         </section>
-        {% endblock %}
+        
     </body>
 </html>

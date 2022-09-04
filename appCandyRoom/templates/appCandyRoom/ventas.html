@@ -20,4 +20,16 @@
 </header>
 {% endblock %}
 {% block contenido_que_cambia %}
+
+<div>
+    <form action = "/ventas/" method="POST"> {% csrf_token %}
+
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+
+
 {% endblock %}
