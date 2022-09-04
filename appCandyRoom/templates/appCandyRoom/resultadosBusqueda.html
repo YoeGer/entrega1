@@ -1,0 +1,38 @@
+{% extends 'appCandyRoom/padre.html' %}
+{% load static %}
+
+{% block titulo %}
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h1 class="masthead-heading mb-0">RESULTADO DE LA BUSQUEDA</h1>
+            <div class="container">
+                <a class="btn btn-primary" href="{% url 'inicio' %}">Volver Inicio</a>
+            </div>
+            
+           
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+{% endblock %}
+{% block contenido_que_cambia %}
+
+<div>
+    <h1>BUSQUEDA DE PRODUCTOS</h1>
+    {% if producto %}
+    <ul>
+        {% for prod in producto %} 
+        <li>{{ prod.producto }}</li>
+        <li>{{ prod.cantidad }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No se encontraron productos</p>
+    {% endif %}
+</div>
+
+{% endblock %}

@@ -7,5 +7,7 @@ urlpatterns = [
     path('proveedores/', proveedores, name='proveedores'), 
     path('ventas/', ventas, name='ventas'), 
     path('gastos/', gastos_generales, name='gastos'),
+    path('busquedaProducto/', busquedaProducto, name="busquedaProducto"), 
+    path('buscar/', buscar, name="buscar"), 
 ]
 

@@ -64,3 +64,16 @@ def gastos_generales (request):
     else:
         form = Gastos_GeneralesForm()
     return render (request, "appCandyRoom/gastos.html", {'form': form})   
+
+def busquedaProducto(request): 
+    return render (request, "appCandyRoom/busquedaProducto.html")
+
+def buscar(request): 
+    if request.GET["producto"]: 
+        producto = request.GET["producto"]
+        producto = Stock.objects.filter(producto = producto)
+        return render (request, "appCandyRoom/resultadosBusqueda.html", {"producto": producto})
+    else: 
+        return render (request, "appCandyRoom/busquedaProducto.html", {'mensaje': "Ingrese un producto"})
+
+    
