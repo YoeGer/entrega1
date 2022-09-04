@@ -22,7 +22,7 @@
 {% block contenido_que_cambia %} 
 
 <div>
-    <form action = "/proveedores/"  method="POST"> {% csrf_token %}
+    <form action = "{% url 'proveedores' %}"  method="POST"> {% csrf_token %}
 
         <table>
             {{ form.as_table }}

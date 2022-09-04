@@ -6,7 +6,7 @@ class Stock(models.Model):
     precio = models.FloatField()
 
     def __str__(self): 
-        return self.producto 
+        return self.producto + " " + str(self.cantidad)
 
 class Proveedores(models.Model):
     nombre = models.CharField(max_length = 50)
@@ -19,7 +19,7 @@ class Proveedores(models.Model):
 class Ventas(models.Model):
     cliente = models.CharField(max_length = 50)
     total = models.FloatField()
-    madio_de_pago = models.CharField(max_length = 50)
+    medio_de_pago = models.CharField(max_length = 50)
 
     def __str__(self): 
         return self.cliente + " " + "$"+str(self.total)

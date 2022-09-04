@@ -13,7 +13,7 @@ class ProveedoresForm (forms.Form):
 class VentasForm(forms.Form):
     cliente = forms.CharField(max_length = 50)
     total = forms.FloatField()
-    madio_de_pago = forms.CharField(max_length = 50)
+    medio_de_pago = forms.CharField(max_length = 50)
 
 class Gastos_GeneralesForm(forms.Form):
     especificacion = forms.CharField(max_length = 50)
